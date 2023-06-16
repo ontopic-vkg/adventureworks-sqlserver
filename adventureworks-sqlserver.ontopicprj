@@ -443,6 +443,84 @@
 						}
 					]
 				}
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"EmailAddress\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"EmailAddress\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"EmailAddress\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": [
+						{
+							"name": "3313bcf1-8cd3-4f56-b250-17f6654f30bd",
+							"determinants": [
+								"\"BusinessEntityID\"",
+								"\"EmailAddress\""
+							],
+							"isPrimaryKey": false
+						}
+					]
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens",
+				"nonNullConstraints": {
+					"added": []
+				}
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"CountryRegion\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"CountryRegion\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"CountryRegion\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -946,6 +1024,40 @@
 					"relationName": [
 						"\"lenses\"",
 						"\"HomeAddress\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "54e4b177-8ebc-4fd5-b41d-97255aea6efb",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:email"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"EmailAddress\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"EmailAddress\""
 					]
 				}
 			}

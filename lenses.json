@@ -372,6 +372,87 @@
 			},
 			"nonNullConstraints": null,
 			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"EmailAddress\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"EmailAddress\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"EmailAddress\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": [
+					{
+						"name": "3313bcf1-8cd3-4f56-b250-17f6654f30bd",
+						"determinants": [
+							"\"BusinessEntityID\"",
+							"\"EmailAddress\""
+						],
+						"isPrimaryKey": false
+					}
+				]
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": {
+				"added": []
+			},
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"CountryRegion\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"CountryRegion\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"CountryRegion\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
 		}
 	]
 }
