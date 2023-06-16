@@ -4506,6 +4506,8 @@ schema:cvdNumC19OverflowPats
         rdfs:comment  "numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed." ;
         rdfs:label    "cvdNumC19OverflowPats" .
 
+voc:ProductCategory  rdf:type  rdfs:Class .
+
 schema:rxcui  rdf:type  rdf:Property ;
         rdfs:comment  "The RxCUI drug identifier from RXNORM." ;
         rdfs:label    "rxcui" .

@@ -578,6 +578,171 @@
 				"nonNullConstraints": {
 					"added": []
 				}
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"Product\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"Product\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductCategory\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductCategory\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductCategory\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductDescription\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductDescription\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductDescription\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductModel\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductModel\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductModel\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductSubcategory\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductSubcategory\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductSubcategory\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -1321,6 +1486,369 @@
 						"\"contactAndType_join\""
 					]
 				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "0e00d47e-14c8-4bca-b6b4-7df7823f01c7",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:sameAs"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntityContact/{BusinessEntityID}/{PersonID}/{ContactTypeID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\"",
+						"PersonID": "\"PersonID\"",
+						"ContactTypeID": "\"ContactTypeID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityContact\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "d67a1806-4be8-4271-ab57-4d8ea03d04d7",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Product"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "926d7e9e-3991-4f07-b941-82c887303a2c",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "eefc533b-ae50-43b7-9202-0266e4e995b2",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productModel/{ProductModelID}",
+					"bindings": {
+						"ProductModelID": "\"ProductModelID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:ProductModel"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductModel\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "e5a1e33b-8a4c-4e14-92a7-d0452c31fa4e",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productModel/{ProductModelID}",
+					"bindings": {
+						"ProductModelID": "\"ProductModelID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductModel\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "7c4018e9-1008-4f49-b581-41ced545efde",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:model"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productModel/{ProductModelID}",
+					"bindings": {
+						"ProductModelID": "\"ProductModelID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "ffd25929-76f3-47df-aee0-29ac9fd06fc7",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:sku"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"ProductNumber\"",
+					"datatype": "xsd:string",
+					"language": null
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "cb494ef6-5a33-48bc-b79f-88fa3747dc2b",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:color"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Color\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "eb370301-21a1-482d-bf2d-954c570638af",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:size"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Size\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "4659239c-1511-4439-87b9-57b26a52bc08",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productSubcategory/{ProductSubcategoryID}",
+					"bindings": {
+						"ProductSubcategoryID": "\"ProductSubcategoryID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "voc:ProductCategory"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductSubcategory\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "60e7b3f5-ef5d-4b6d-9d87-a449d5a54077",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productSubcategory/{ProductSubcategoryID}",
+					"bindings": {
+						"ProductSubcategoryID": "\"ProductSubcategoryID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductSubcategory\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -1352,6 +1880,27 @@
 					"BusinessEntityID": "",
 					"PersonID": "",
 					"ContactTypeID": ""
+				}
+			},
+			{
+				"template": "data:product/{ProductID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductID": ""
+				}
+			},
+			{
+				"template": "data:productModel/{ProductModelID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductModelID": ""
+				}
+			},
+			{
+				"template": "data:productSubcategory/{ProductSubcategoryID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductSubcategoryID": ""
 				}
 			}
 		],
@@ -15721,6 +16270,12 @@
 						"value": "A locksmith."
 					}
 				]
+			},
+			{
+				"id": "voc:ProductCategory",
+				"subClassOf": [],
+				"labels": [],
+				"descriptions": []
 			}
 		],
 		"properties": [
