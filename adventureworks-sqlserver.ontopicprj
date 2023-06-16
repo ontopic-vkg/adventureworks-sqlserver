@@ -277,39 +277,6 @@
 				"name": [
 					"\"lenses\"",
 					"\"AdventureWorks2019\"",
-					"\"Purchasing\"",
-					"\"ProductVendor\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Purchasing\"",
-						"\"ProductVendor\""
-					]
-				],
-				"baseRelation": [
-					"\"Purchasing\"",
-					"\"ProductVendor\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
 					"\"Person\"",
 					"\"StateProvince\""
 				],
@@ -521,6 +488,96 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"BusinessEntityContact\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityContact\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"BusinessEntityContact\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"contactAndType_join\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"join": {
+					"relations": [
+						[
+							"\"AdventureWorks2019\"",
+							"\"Person\"",
+							"\"BusinessEntityContact\""
+						],
+						[
+							"\"AdventureWorks2019\"",
+							"\"Person\"",
+							"\"ContactType\""
+						]
+					],
+					"columnPrefixes": [
+						"c_",
+						"t_"
+					],
+					"onEquality": [
+						{
+							"first": "\"c_ContactTypeID\"",
+							"second": "\"t_ContactTypeID\""
+						}
+					]
+				},
+				"uniqueConstraints": {
+					"added": [
+						{
+							"name": "98bccae1-a8bb-489a-8db4-0a7b9896ff55",
+							"determinants": [
+								"\"c_BusinessEntityID\"",
+								"\"c_PersonID\"",
+								"\"c_ContactTypeID\""
+							],
+							"isPrimaryKey": false
+						}
+					]
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicJoinLens",
+				"nonNullConstraints": {
+					"added": []
+				}
 			}
 		]
 	},
@@ -1124,6 +1181,180 @@
 						"\"CountryRegion\""
 					]
 				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "01d14cde-b591-4dbc-af59-f771bd18751d",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:countryRegion/{CountryRegionCode}",
+					"bindings": {
+						"CountryRegionCode": "\"CountryRegionCode\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:addressCountry"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"CountryRegionCode\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"CountryRegion\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "69c67b02-41c5-405f-bd6e-6cbc57dac6bc",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntityContact/{BusinessEntityID}/{PersonID}/{ContactTypeID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\"",
+						"PersonID": "\"PersonID\"",
+						"ContactTypeID": "\"ContactTypeID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:ContactPoint"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityContact\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "defc9042-d7d5-40fa-ac46-88ff9e80b812",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntityContact/{BusinessEntityID}/{PersonID}/{ContactTypeID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\"",
+						"PersonID": "\"PersonID\"",
+						"ContactTypeID": "\"ContactTypeID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:sameAs"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"PersonID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityContact\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "cdfab946-350b-4c76-a632-e334b108788d",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:contactPoint"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntityContact/{BusinessEntityID}/{PersonID}/{ContactTypeID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\"",
+						"PersonID": "\"PersonID\"",
+						"ContactTypeID": "\"ContactTypeID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityContact\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "5bf24db5-c27c-4d96-a9e6-23c560a471bb",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntityContact/{BusinessEntityID}/{PersonID}/{ContactTypeID}",
+					"bindings": {
+						"BusinessEntityID": "\"c_BusinessEntityID\"",
+						"PersonID": "\"c_PersonID\"",
+						"ContactTypeID": "\"c_ContactTypeID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:contactType"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"t_Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"contactAndType_join\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -1146,6 +1377,15 @@
 				"termType": "iri",
 				"bindings": {
 					"CountryRegionCode": ""
+				}
+			},
+			{
+				"template": "data:businessEntityContact/{BusinessEntityID}/{PersonID}/{ContactTypeID}",
+				"termType": "iri",
+				"bindings": {
+					"BusinessEntityID": "",
+					"PersonID": "",
+					"ContactTypeID": ""
 				}
 			}
 		],

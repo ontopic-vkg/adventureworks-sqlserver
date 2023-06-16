@@ -221,41 +221,6 @@
 			"name": [
 				"\"lenses\"",
 				"\"AdventureWorks2019\"",
-				"\"Purchasing\"",
-				"\"ProductVendor\""
-			],
-			"otherNames": [
-				[
-					"\"AdventureWorks2019\"",
-					"\"Purchasing\"",
-					"\"ProductVendor\""
-				]
-			],
-			"baseRelation": [
-				"\"Purchasing\"",
-				"\"ProductVendor\""
-			],
-			"filterExpression": null,
-			"columns": {
-				"added": [],
-				"hidden": []
-			},
-			"uniqueConstraints": {
-				"added": []
-			},
-			"otherFunctionalDependencies": {
-				"added": []
-			},
-			"foreignKeys": {
-				"added": []
-			},
-			"nonNullConstraints": null,
-			"type": "BasicViewDefinition"
-		},
-		{
-			"name": [
-				"\"lenses\"",
-				"\"AdventureWorks2019\"",
 				"\"Person\"",
 				"\"StateProvince\""
 			],
@@ -453,6 +418,94 @@
 			},
 			"nonNullConstraints": null,
 			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"BusinessEntityContact\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"BusinessEntityContact\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"BusinessEntityContact\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"contactAndType_join\""
+			],
+			"otherNames": null,
+			"join": {
+				"relations": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityContact\""
+					],
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"ContactType\""
+					]
+				],
+				"columnPrefixes": [
+					"c_",
+					"t_"
+				]
+			},
+			"filterExpression": "\"c_ContactTypeID\" = \"t_ContactTypeID\"",
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": [
+					{
+						"name": "98bccae1-a8bb-489a-8db4-0a7b9896ff55",
+						"determinants": [
+							"\"c_BusinessEntityID\"",
+							"\"c_PersonID\"",
+							"\"c_ContactTypeID\""
+						],
+						"isPrimaryKey": false
+					}
+				]
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": {
+				"added": []
+			},
+			"type": "JoinViewDefinition"
 		}
 	]
 }
