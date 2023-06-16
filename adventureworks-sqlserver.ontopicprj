@@ -744,6 +744,72 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductInventory\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductInventory\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductInventory\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductReview\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductReview\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -1948,6 +2014,404 @@
 						"\"ProductCategory\""
 					]
 				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "5e568ad9-c613-4694-8c3e-b685d80ffa08",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Review"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "375dfdda-7053-4a57-893f-39c0b407ab55",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:contentReferenceTime"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"ReviewDate\"",
+					"datatype": "xsd:dateTime"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "8efd146a-ccde-4c4f-863d-d74ff3fab466",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:comment"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Comments\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "3d35ace3-f6ee-4bdf-8462-2adb83d97719",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:itemReviewed"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "6e7f1ca2-60b0-4043-9e09-649b02452309",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:review"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "dcab5818-5906-426b-a1f2-63b149f8b713",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:author"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:authorProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "4cdf6504-509c-4a14-a2c8-a1fedc976e3c",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:authorProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Person"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "cf45507a-e86e-472a-8b35-5c5dc79e4466",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:authorProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"ReviewerName\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "71eb5563-fcb7-447e-9c3c-4e575662612b",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:authorProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:email"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"EmailAddress\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "72a30663-75fd-4292-8165-a9f48fc26ea2",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:reviewRating"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:ratingProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "e549f1c2-2fc8-44f3-867e-4e94f7ee311d",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:ratingProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Rating"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "826e6ae1-1f18-4a46-b75d-f466dfac565d",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:ratingProductReview/{ProductReviewID}",
+					"bindings": {
+						"ProductReviewID": "\"ProductReviewID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:ratingValue"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Rating\"",
+					"datatype": "xsd:integer"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductReview\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -2007,6 +2471,27 @@
 				"termType": "iri",
 				"bindings": {
 					"ProductCategoryID": ""
+				}
+			},
+			{
+				"template": "data:productReview/{ProductReviewID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductReviewID": ""
+				}
+			},
+			{
+				"template": "data:authorProductReview/{ProductReviewID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductReviewID": ""
+				}
+			},
+			{
+				"template": "data:ratingProductReview/{ProductReviewID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductReviewID": ""
 				}
 			}
 		],

@@ -681,6 +681,76 @@
 			},
 			"nonNullConstraints": null,
 			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Production\"",
+				"\"ProductInventory\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductInventory\""
+				]
+			],
+			"baseRelation": [
+				"\"Production\"",
+				"\"ProductInventory\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Production\"",
+				"\"ProductReview\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductReview\""
+				]
+			],
+			"baseRelation": [
+				"\"Production\"",
+				"\"ProductReview\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
 		}
 	]
 }
