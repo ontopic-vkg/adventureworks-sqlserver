@@ -13,7 +13,8 @@
 		"foaf": "http://xmlns.com/foaf/0.1/",
 		"schema": "http://schema.org/",
 		"dcat": "http://www.w3.org/ns/dcat#",
-		"skos": "http://www.w3.org/2004/02/skos/core#"
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"dct": "http://purl.org/dc/terms/"
 	},
 	"lenses": {
 		"relations": [
@@ -1849,6 +1850,104 @@
 						"\"ProductSubcategory\""
 					]
 				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "73ee9f37-fc86-4fa4-877a-409e69c83935",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productCategory/{ProductCategoryID}",
+					"bindings": {
+						"ProductCategoryID": "\"ProductCategoryID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "voc:ProductCategory"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductCategory\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "6e83771c-5863-43b9-aa64-17827e77697c",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productSubcategory/{ProductSubcategoryID}",
+					"bindings": {
+						"ProductSubcategoryID": "\"ProductSubcategoryID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "skos:broader"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productCategory/{ProductCategoryID}",
+					"bindings": {
+						"ProductCategoryID": "\"ProductCategoryID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductSubcategory\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "bd21f324-1876-4c0e-adc7-5c3d34f65475",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productCategory/{ProductCategoryID}",
+					"bindings": {
+						"ProductCategoryID": "\"ProductCategoryID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductCategory\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -1901,6 +2000,13 @@
 				"termType": "iri",
 				"bindings": {
 					"ProductSubcategoryID": ""
+				}
+			},
+			{
+				"template": "data:productCategory/{ProductCategoryID}",
+				"termType": "iri",
+				"bindings": {
+					"ProductCategoryID": ""
 				}
 			}
 		],
@@ -16273,8 +16379,56 @@
 			},
 			{
 				"id": "voc:ProductCategory",
-				"subClassOf": [],
+				"subClassOf": [
+					"skos:Concept"
+				],
 				"labels": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:OrderedCollection",
+				"subClassOf": [
+					"skos:Collection"
+				],
+				"labels": [
+					{
+						"value": "Ordered Collection",
+						"language": "en"
+					}
+				],
+				"descriptions": []
+			},
+			{
+				"id": "skos:Concept",
+				"labels": [
+					{
+						"value": "Concept",
+						"language": "en"
+					}
+				],
+				"subClassOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:ConceptScheme",
+				"labels": [
+					{
+						"value": "Concept Scheme",
+						"language": "en"
+					}
+				],
+				"subClassOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:Collection",
+				"labels": [
+					{
+						"value": "Collection",
+						"language": "en"
+					}
+				],
+				"subClassOf": [],
 				"descriptions": []
 			}
 		],
@@ -17416,9 +17570,17 @@
 				"domains": [],
 				"ranges": [],
 				"inverses": [],
-				"subPropertyOf": [],
-				"labels": [],
-				"descriptions": []
+				"subPropertyOf": [
+					"skos:mappingRelation"
+				],
+				"labels": [
+					{
+						"value": "has close match",
+						"language": "en"
+					}
+				],
+				"descriptions": [],
+				"type": "ObjectProperty"
 			},
 			{
 				"id": "schema:memberOf",
@@ -17719,9 +17881,22 @@
 				"domains": [],
 				"ranges": [],
 				"inverses": [],
-				"subPropertyOf": [],
-				"labels": [],
-				"descriptions": []
+				"subPropertyOf": [
+					"skos:closeMatch"
+				],
+				"labels": [
+					{
+						"value": "has exact match",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch.",
+						"language": "en"
+					}
+				],
+				"type": "ObjectProperty"
 			},
 			{
 				"id": "schema:titleEIDR",
@@ -40127,6 +40302,519 @@
 				],
 				"domains": [],
 				"ranges": [],
+				"inverses": [],
+				"subPropertyOf": []
+			},
+			{
+				"id": "skos:editorialNote",
+				"subPropertyOf": [
+					"skos:note"
+				],
+				"labels": [
+					{
+						"value": "editorial note",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:broadMatch",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:mappingRelation",
+					"skos:broader"
+				],
+				"inverses": [
+					"skos:narrowMatch"
+				],
+				"labels": [
+					{
+						"value": "has broader match",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:narrower",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:narrowerTransitive"
+				],
+				"inverses": [
+					"skos:broader"
+				],
+				"labels": [
+					{
+						"value": "has narrower",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "Narrower concepts are typically rendered as children in a concept hierarchy (tree).",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": []
+			},
+			{
+				"id": "skos:prefLabel",
+				"subPropertyOf": [
+					"rdfs:label"
+				],
+				"labels": [
+					{
+						"value": "preferred label",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag.",
+						"language": "en"
+					},
+					{
+						"value": "The range of skos:prefLabel is the class of RDF plain literals.",
+						"language": "en"
+					},
+					{
+						"value": "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise\n      disjoint properties.",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": []
+			},
+			{
+				"id": "skos:broader",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:broaderTransitive"
+				],
+				"inverses": [
+					"skos:narrower"
+				],
+				"labels": [
+					{
+						"value": "has broader",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "Broader concepts are typically rendered as parents in a concept hierarchy (tree).",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": []
+			},
+			{
+				"id": "skos:member",
+				"type": "ObjectProperty",
+				"domains": [
+					"skos:Collection"
+				],
+				"labels": [
+					{
+						"value": "has member",
+						"language": "en"
+					}
+				],
+				"ranges": [],
+				"inverses": [],
+				"subPropertyOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:scopeNote",
+				"subPropertyOf": [
+					"skos:note"
+				],
+				"labels": [
+					{
+						"value": "scope note",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:notation",
+				"type": "DataProperty",
+				"labels": [
+					{
+						"value": "notation",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"subPropertyOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:narrowMatch",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:mappingRelation",
+					"skos:narrower"
+				],
+				"inverses": [
+					"skos:broadMatch"
+				],
+				"labels": [
+					{
+						"value": "has narrower match",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:semanticRelation",
+				"type": "ObjectProperty",
+				"domains": [
+					"skos:Concept"
+				],
+				"ranges": [
+					"skos:Concept"
+				],
+				"labels": [
+					{
+						"value": "is in semantic relation with",
+						"language": "en"
+					}
+				],
+				"inverses": [],
+				"subPropertyOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:mappingRelation",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:semanticRelation"
+				],
+				"labels": [
+					{
+						"value": "is in mapping relation with",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice.",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": []
+			},
+			{
+				"id": "skos:historyNote",
+				"subPropertyOf": [
+					"skos:note"
+				],
+				"labels": [
+					{
+						"value": "history note",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:changeNote",
+				"subPropertyOf": [
+					"skos:note"
+				],
+				"labels": [
+					{
+						"value": "change note",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:inScheme",
+				"type": "ObjectProperty",
+				"ranges": [
+					"skos:ConceptScheme"
+				],
+				"labels": [
+					{
+						"value": "is in scheme",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"inverses": [],
+				"subPropertyOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:definition",
+				"subPropertyOf": [
+					"skos:note"
+				],
+				"labels": [
+					{
+						"value": "definition",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:relatedMatch",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:mappingRelation",
+					"skos:related"
+				],
+				"labels": [
+					{
+						"value": "has related match",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:related",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:semanticRelation"
+				],
+				"labels": [
+					{
+						"value": "has related",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "skos:related is disjoint with skos:broaderTransitive",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": []
+			},
+			{
+				"id": "skos:example",
+				"subPropertyOf": [
+					"skos:note"
+				],
+				"labels": [
+					{
+						"value": "example",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:note",
+				"labels": [
+					{
+						"value": "note",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": [],
+				"subPropertyOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:narrowerTransitive",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:semanticRelation"
+				],
+				"inverses": [
+					"skos:broaderTransitive"
+				],
+				"labels": [
+					{
+						"value": "has narrower transitive",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:hasTopConcept",
+				"type": "ObjectProperty",
+				"domains": [
+					"skos:ConceptScheme"
+				],
+				"ranges": [
+					"skos:Concept"
+				],
+				"inverses": [
+					"skos:topConceptOf"
+				],
+				"labels": [
+					{
+						"value": "has top concept",
+						"language": "en"
+					}
+				],
+				"subPropertyOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:topConceptOf",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:inScheme"
+				],
+				"domains": [
+					"skos:Concept"
+				],
+				"ranges": [
+					"skos:ConceptScheme"
+				],
+				"inverses": [
+					"skos:hasTopConcept"
+				],
+				"labels": [
+					{
+						"value": "is top concept in scheme",
+						"language": "en"
+					}
+				],
+				"descriptions": []
+			},
+			{
+				"id": "skos:hiddenLabel",
+				"subPropertyOf": [
+					"rdfs:label"
+				],
+				"labels": [
+					{
+						"value": "hidden label",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "The range of skos:hiddenLabel is the class of RDF plain literals.",
+						"language": "en"
+					},
+					{
+						"value": "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": []
+			},
+			{
+				"id": "skos:altLabel",
+				"subPropertyOf": [
+					"rdfs:label"
+				],
+				"labels": [
+					{
+						"value": "alternative label",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "The range of skos:altLabel is the class of RDF plain literals.",
+						"language": "en"
+					},
+					{
+						"value": "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"inverses": []
+			},
+			{
+				"id": "skos:broaderTransitive",
+				"type": "ObjectProperty",
+				"subPropertyOf": [
+					"skos:semanticRelation"
+				],
+				"inverses": [
+					"skos:narrowerTransitive"
+				],
+				"labels": [
+					{
+						"value": "has broader transitive",
+						"language": "en"
+					}
+				],
+				"domains": [],
+				"ranges": [],
+				"descriptions": []
+			},
+			{
+				"id": "skos:memberList",
+				"type": "ObjectProperty",
+				"domains": [
+					"skos:OrderedCollection"
+				],
+				"ranges": [
+					"rdf:List"
+				],
+				"labels": [
+					{
+						"value": "has member list",
+						"language": "en"
+					}
+				],
+				"descriptions": [
+					{
+						"value": "For any resource, every item in the list given as the value of the\n      skos:memberList property is also a value of the skos:member property.",
+						"language": "en"
+					}
+				],
 				"inverses": [],
 				"subPropertyOf": []
 			}
