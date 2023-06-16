@@ -49,6 +49,248 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"Address\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Address\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"Address\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"AddressType\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"AddressType\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"AddressType\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"PersonPhone\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"PersonPhone\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"PersonPhone\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"BusinessEntityAddress\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityAddress\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"BusinessEntityAddress\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"HumanResources\"",
+					"\"Employee\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"HumanResources\"",
+						"\"Employee\""
+					]
+				],
+				"baseRelation": [
+					"\"HumanResources\"",
+					"\"Employee\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Purchasing\"",
+					"\"ProductVendor\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Purchasing\"",
+						"\"ProductVendor\""
+					]
+				],
+				"baseRelation": [
+					"\"Purchasing\"",
+					"\"ProductVendor\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"employee_person\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"join": {
+					"relations": [
+						[
+							"\"AdventureWorks2019\"",
+							"\"Person\"",
+							"\"Person\""
+						],
+						[
+							"\"AdventureWorks2019\"",
+							"\"HumanResources\"",
+							"\"Employee\""
+						]
+					],
+					"columnPrefixes": [
+						"p_",
+						"e_"
+					],
+					"onEquality": [
+						{
+							"first": "\"p_BusinessEntityID\"",
+							"second": "\"e_BusinessEntityID\""
+						}
+					]
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicJoinLens"
 			}
 		]
 	},
@@ -249,6 +491,40 @@
 						"\"AdventureWorks2019\"",
 						"\"Person\"",
 						"\"Person\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "4579b5c2-bcf6-4e13-ab0f-bf4d5e5cfa05",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:telephone"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"PhoneNumber\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"PersonPhone\""
 					]
 				}
 			}

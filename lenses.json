@@ -34,6 +34,257 @@
 			},
 			"nonNullConstraints": null,
 			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"Address\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"Address\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"Address\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"AddressType\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"AddressType\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"AddressType\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"PersonPhone\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"PersonPhone\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"PersonPhone\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"BusinessEntityAddress\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"BusinessEntityAddress\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"BusinessEntityAddress\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"HumanResources\"",
+				"\"Employee\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"HumanResources\"",
+					"\"Employee\""
+				]
+			],
+			"baseRelation": [
+				"\"HumanResources\"",
+				"\"Employee\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Purchasing\"",
+				"\"ProductVendor\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Purchasing\"",
+					"\"ProductVendor\""
+				]
+			],
+			"baseRelation": [
+				"\"Purchasing\"",
+				"\"ProductVendor\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"employee_person\""
+			],
+			"otherNames": null,
+			"join": {
+				"relations": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					],
+					[
+						"\"AdventureWorks2019\"",
+						"\"HumanResources\"",
+						"\"Employee\""
+					]
+				],
+				"columnPrefixes": [
+					"p_",
+					"e_"
+				]
+			},
+			"filterExpression": "\"p_BusinessEntityID\" = \"e_BusinessEntityID\"",
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "JoinViewDefinition"
 		}
 	]
 }
