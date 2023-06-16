@@ -1183,40 +1183,6 @@
 				}
 			},
 			{
-				"type": "PredicateObjectEntry",
-				"id": "01d14cde-b591-4dbc-af59-f771bd18751d",
-				"subject": {
-					"termType": "iri",
-					"type": "IriOrBNodeTemplate",
-					"template": "data:countryRegion/{CountryRegionCode}",
-					"bindings": {
-						"CountryRegionCode": "\"CountryRegionCode\""
-					}
-				},
-				"predicate": {
-					"termType": "iri",
-					"type": "IriOrBNodeConstant",
-					"value": "schema:addressCountry"
-				},
-				"object": {
-					"termType": "literal",
-					"type": "LiteralColumn",
-					"column": "\"CountryRegionCode\"",
-					"datatype": "xsd:string"
-				},
-				"isIncludedInDefaultGraph": true,
-				"graphs": [],
-				"source": {
-					"type": "RelationSource",
-					"relationName": [
-						"\"lenses\"",
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"CountryRegion\""
-					]
-				}
-			},
-			{
 				"isIncludedInDefaultGraph": true,
 				"type": "ClassEntry",
 				"id": "69c67b02-41c5-405f-bd6e-6cbc57dac6bc",
