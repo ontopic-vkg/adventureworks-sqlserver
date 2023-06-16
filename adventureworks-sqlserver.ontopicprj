@@ -69,7 +69,62 @@
 					"\"Address\""
 				],
 				"columns": {
-					"added": [],
+					"added": [
+						{
+							"name": "\"lines\"",
+							"inputColumn": "\"AddressLine1\"",
+							"transformations": [
+								{
+									"type": "IfThenElse",
+									"else": {
+										"type": "Column",
+										"value": "\"AddressLine1\""
+									},
+									"if": {
+										"input": {
+											"type": "Column",
+											"value": "\"AddressLine2\""
+										},
+										"mustHold": false,
+										"type": "IsNullCondition"
+									},
+									"then": {
+										"label": "lines_concat",
+										"input": {
+											"type": "InputArgument"
+										},
+										"type": "SecondaryColumn",
+										"transformations": [
+											{
+												"arguments": [
+													{
+														"type": "Column",
+														"value": "\"AddressLine1\""
+													},
+													{
+														"type": "Constant",
+														"value": " "
+													},
+													{
+														"type": "Column",
+														"value": "\"AddressLine2\""
+													}
+												],
+												"type": "Concat"
+											}
+										]
+									}
+								},
+								{
+									"argument": {
+										"type": "InputArgument"
+									},
+									"targetType": "STRING",
+									"type": "Cast"
+								}
+							]
+						}
+					],
 					"hidden": []
 				},
 				"uniqueConstraints": {
@@ -81,7 +136,10 @@
 				"foreignKeys": {
 					"added": []
 				},
-				"type": "OntopicBasicLens"
+				"type": "OntopicBasicLens",
+				"nonNullConstraints": {
+					"added": []
+				}
 			},
 			{
 				"name": [
@@ -251,33 +309,68 @@
 			{
 				"name": [
 					"\"lenses\"",
-					"\"employee_person\""
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"StateProvince\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"StateProvince\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"StateProvince\""
 				],
 				"columns": {
 					"added": [],
 					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AddressStateProvince_join\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": [
+						"\"a_AddressLine1\""
+					]
 				},
 				"join": {
 					"relations": [
 						[
 							"\"AdventureWorks2019\"",
 							"\"Person\"",
-							"\"Person\""
+							"\"Address\""
 						],
 						[
 							"\"AdventureWorks2019\"",
-							"\"HumanResources\"",
-							"\"Employee\""
+							"\"Person\"",
+							"\"StateProvince\""
 						]
 					],
 					"columnPrefixes": [
-						"p_",
-						"e_"
+						"a_",
+						"p_"
 					],
 					"onEquality": [
 						{
-							"first": "\"p_BusinessEntityID\"",
-							"second": "\"e_BusinessEntityID\""
+							"first": "\"a_StateProvinceID\"",
+							"second": "\"p_StateProvinceID\""
 						}
 					]
 				},
@@ -291,6 +384,54 @@
 					"added": []
 				},
 				"type": "OntopicJoinLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"HomeAddress\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"BusinessEntityAddress\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"BusinessEntityAddress\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens",
+				"filter": {
+					"type": "CompositeCondition",
+					"isConjunction": true,
+					"conditions": [
+						{
+							"type": "ValuesCondition",
+							"input": {
+								"type": "Column",
+								"value": "\"AddressTypeID\""
+							},
+							"mustHold": true,
+							"values": [
+								"2"
+							]
+						}
+					]
+				}
 			}
 		]
 	},
@@ -303,7 +444,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -330,7 +471,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -364,7 +505,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -398,7 +539,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -432,7 +573,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -466,7 +607,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -500,7 +641,7 @@
 				"subject": {
 					"termType": "iri",
 					"type": "IriOrBNodeTemplate",
-					"template": "data:person/{BusinessEntityID}",
+					"template": "data:businessEntity/{BusinessEntityID}",
 					"bindings": {
 						"BusinessEntityID": "\"BusinessEntityID\""
 					}
@@ -527,14 +668,290 @@
 						"\"PersonPhone\""
 					]
 				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "ab51cbaf-cdd1-4f58-bac9-aa0f107ae59e",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:gender"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeDictionary",
+					"column": "\"Gender\"",
+					"dictionary": {
+						"M": [
+							"schema:Male"
+						],
+						"F": [
+							"schema:Female"
+						]
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"HumanResources\"",
+						"\"Employee\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "12349e69-58b9-4817-8eca-14593f691fb5",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"AddressID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:PostalAddress"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Address\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "cd146e24-36dc-4b1a-835d-e770d88522bf",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"AddressID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:streetAddress"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"lines\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Address\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "2a475191-bed1-4a6d-8f85-bd87e1888abc",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"AddressID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:addressLocality"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"City\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Address\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "8188bc13-fdc4-4231-bb9d-9109a4a44d76",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"AddressID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:postalCode"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"PostalCode\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Address\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "4b119f2a-c874-4dc7-9c0e-4f8363a6dbff",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"a_AddressID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:addressRegion"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"p_StateProvinceCode\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AddressStateProvince_join\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "8ebebebc-4381-4fb8-b4bf-56f5dc3faa71",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"a_AddressID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:addressCountry"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"p_CountryRegionCode\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AddressStateProvince_join\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "c23c86d4-cb03-4131-a7ad-c63095a8db30",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:address"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:address/{AddressID}",
+					"bindings": {
+						"AddressID": "\"AddressID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"HomeAddress\""
+					]
+				}
 			}
 		],
 		"templates": [
 			{
-				"template": "data:person/{BusinessEntityID}",
+				"template": "data:businessEntity/{BusinessEntityID}",
 				"termType": "iri",
 				"bindings": {
 					"BusinessEntityID": ""
+				}
+			},
+			{
+				"template": "data:address/{AddressID}",
+				"termType": "iri",
+				"bindings": {
+					"AddressID": ""
 				}
 			}
 		],

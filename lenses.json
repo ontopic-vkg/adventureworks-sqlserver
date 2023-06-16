@@ -55,7 +55,12 @@
 			],
 			"filterExpression": null,
 			"columns": {
-				"added": [],
+				"added": [
+					{
+						"name": "\"lines\"",
+						"expression": "CAST(CASE WHEN \"AddressLine2\" IS NOT NULL THEN (CAST(\"AddressLine1\" AS NVARCHAR(max)) + ' ' + CAST(\"AddressLine2\" AS NVARCHAR(max))) ELSE \"AddressLine1\" END AS NVARCHAR(max))"
+					}
+				],
 				"hidden": []
 			},
 			"uniqueConstraints": {
@@ -67,7 +72,9 @@
 			"foreignKeys": {
 				"added": []
 			},
-			"nonNullConstraints": null,
+			"nonNullConstraints": {
+				"added": []
+			},
 			"type": "BasicViewDefinition"
 		},
 		{
@@ -248,28 +255,22 @@
 		{
 			"name": [
 				"\"lenses\"",
-				"\"employee_person\""
+				"\"AdventureWorks2019\"",
+				"\"Person\"",
+				"\"StateProvince\""
 			],
-			"otherNames": null,
-			"join": {
-				"relations": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"Person\""
-					],
-					[
-						"\"AdventureWorks2019\"",
-						"\"HumanResources\"",
-						"\"Employee\""
-					]
-				],
-				"columnPrefixes": [
-					"p_",
-					"e_"
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"StateProvince\""
 				]
-			},
-			"filterExpression": "\"p_BusinessEntityID\" = \"e_BusinessEntityID\"",
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"StateProvince\""
+			],
+			"filterExpression": null,
 			"columns": {
 				"added": [],
 				"hidden": []
@@ -284,7 +285,83 @@
 				"added": []
 			},
 			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AddressStateProvince_join\""
+			],
+			"otherNames": null,
+			"join": {
+				"relations": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Address\""
+					],
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"StateProvince\""
+					]
+				],
+				"columnPrefixes": [
+					"a_",
+					"p_"
+				]
+			},
+			"filterExpression": "\"a_StateProvinceID\" = \"p_StateProvinceID\"",
+			"columns": {
+				"added": [],
+				"hidden": [
+					"\"a_AddressLine1\""
+				]
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
 			"type": "JoinViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"HomeAddress\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Person\"",
+					"\"BusinessEntityAddress\""
+				]
+			],
+			"baseRelation": [
+				"\"Person\"",
+				"\"BusinessEntityAddress\""
+			],
+			"filterExpression": "\"AddressTypeID\" = 2",
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
 		}
 	]
 }
