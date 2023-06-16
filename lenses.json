@@ -319,7 +319,15 @@
 				]
 			},
 			"uniqueConstraints": {
-				"added": []
+				"added": [
+					{
+						"name": "5e25ae05-bbb2-473b-9a44-9871d80e2733",
+						"determinants": [
+							"\"a_AddressID\""
+						],
+						"isPrimaryKey": false
+					}
+				]
 			},
 			"otherFunctionalDependencies": {
 				"added": []
@@ -327,7 +335,9 @@
 			"foreignKeys": {
 				"added": []
 			},
-			"nonNullConstraints": null,
+			"nonNullConstraints": {
+				"added": []
+			},
 			"type": "JoinViewDefinition"
 		},
 		{
