@@ -978,10 +978,12 @@
 					"value": "schema:addressCountry"
 				},
 				"object": {
-					"termType": "literal",
-					"type": "LiteralColumn",
-					"column": "\"p_CountryRegionCode\"",
-					"datatype": "xsd:string"
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:countryRegion/{CountryRegionCode}",
+					"bindings": {
+						"CountryRegionCode": "\"p_CountryRegionCode\""
+					}
 				},
 				"isIncludedInDefaultGraph": true,
 				"graphs": [],
@@ -1060,6 +1062,68 @@
 						"\"EmailAddress\""
 					]
 				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "695fa15f-64d3-44fa-be3e-58d80e41495e",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:countryRegion/{CountryRegionCode}",
+					"bindings": {
+						"CountryRegionCode": "\"CountryRegionCode\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Country"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"CountryRegion\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "1cb8940c-ccce-4284-9957-1798ea2e4386",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:countryRegion/{CountryRegionCode}",
+					"bindings": {
+						"CountryRegionCode": "\"CountryRegionCode\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"CountryRegion\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -1075,6 +1139,13 @@
 				"termType": "iri",
 				"bindings": {
 					"AddressID": ""
+				}
+			},
+			{
+				"template": "data:countryRegion/{CountryRegionCode}",
+				"termType": "iri",
+				"bindings": {
+					"CountryRegionCode": ""
 				}
 			}
 		],

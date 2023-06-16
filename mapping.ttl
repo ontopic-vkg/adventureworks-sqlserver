@@ -15,21 +15,23 @@
 
 [ <http://www.w3.org/ns/r2rml#logicalTable>
           [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"HomeAddress\"" ] ;
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Address\"" ] ;
   <http://www.w3.org/ns/r2rml#predicateObjectMap>
           [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#template>
-                              "http://advworks.example.org/data/address/{\"AddressID\"}" ;
+                    [ <http://www.w3.org/ns/r2rml#column>
+                              "\"City\"" ;
+                      <http://www.w3.org/ns/r2rml#datatype>
+                              xsd:string ;
                       <http://www.w3.org/ns/r2rml#termType>
-                              <http://www.w3.org/ns/r2rml#IRI>
+                              <http://www.w3.org/ns/r2rml#Literal>
                     ] ;
             <http://www.w3.org/ns/r2rml#predicateMap>
                     [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:address ]
+                              schema:addressLocality ]
           ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+                    "http://advworks.example.org/data/address/{\"AddressID\"}" ;
             <http://www.w3.org/ns/r2rml#termType>
                     <http://www.w3.org/ns/r2rml#IRI>
           ]
@@ -41,7 +43,7 @@
   <http://www.w3.org/ns/r2rml#predicateObjectMap>
           [ <http://www.w3.org/ns/r2rml#objectMap>
                     [ <http://www.w3.org/ns/r2rml#column>
-                              "\"FirstName\"" ;
+                              "\"Suffix\"" ;
                       <http://www.w3.org/ns/r2rml#datatype>
                               xsd:string ;
                       <http://www.w3.org/ns/r2rml#termType>
@@ -49,7 +51,26 @@
                     ] ;
             <http://www.w3.org/ns/r2rml#predicateMap>
                     [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:givenName ]
+                              schema:honorificSuffix ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#sqlQuery>
+                    "SELECT * FROM \"lenses\".\"AdventureWorks2019\".\"HumanResources\".\"Employee\" WHERE \"Gender\" = 'M'" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:Male ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:gender ]
           ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#template>
@@ -74,6 +95,110 @@
             <http://www.w3.org/ns/r2rml#predicateMap>
                     [ <http://www.w3.org/ns/r2rml#constant>
                               schema:telephone ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#sqlQuery>
+                    "SELECT * FROM \"lenses\".\"AdventureWorks2019\".\"HumanResources\".\"Employee\" WHERE \"Gender\" = 'F'" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:Female ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:gender ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Address\"" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#column>
+                              "\"lines\"" ;
+                      <http://www.w3.org/ns/r2rml#datatype>
+                              xsd:string ;
+                      <http://www.w3.org/ns/r2rml#termType>
+                              <http://www.w3.org/ns/r2rml#Literal>
+                    ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:streetAddress ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/address/{\"AddressID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"EmailAddress\"" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#column>
+                              "\"EmailAddress\"" ;
+                      <http://www.w3.org/ns/r2rml#datatype>
+                              xsd:string ;
+                      <http://www.w3.org/ns/r2rml#termType>
+                              <http://www.w3.org/ns/r2rml#Literal>
+                    ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:email ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#class>
+                    schema:Person ;
+            <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#column>
+                              "\"Title\"" ;
+                      <http://www.w3.org/ns/r2rml#datatype>
+                              xsd:string ;
+                      <http://www.w3.org/ns/r2rml#termType>
+                              <http://www.w3.org/ns/r2rml#Literal>
+                    ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:honorificPrefix ]
           ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#template>
@@ -109,30 +234,6 @@
 
 [ <http://www.w3.org/ns/r2rml#logicalTable>
           [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Address\"" ] ;
-  <http://www.w3.org/ns/r2rml#predicateObjectMap>
-          [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#column>
-                              "\"lines\"" ;
-                      <http://www.w3.org/ns/r2rml#datatype>
-                              xsd:string ;
-                      <http://www.w3.org/ns/r2rml#termType>
-                              <http://www.w3.org/ns/r2rml#Literal>
-                    ] ;
-            <http://www.w3.org/ns/r2rml#predicateMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:streetAddress ]
-          ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/address/{\"AddressID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#tableName>
                     "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
   <http://www.w3.org/ns/r2rml#predicateObjectMap>
           [ <http://www.w3.org/ns/r2rml#objectMap>
@@ -157,11 +258,11 @@
 
 [ <http://www.w3.org/ns/r2rml#logicalTable>
           [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"EmailAddress\"" ] ;
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
   <http://www.w3.org/ns/r2rml#predicateObjectMap>
           [ <http://www.w3.org/ns/r2rml#objectMap>
                     [ <http://www.w3.org/ns/r2rml#column>
-                              "\"EmailAddress\"" ;
+                              "\"FirstName\"" ;
                       <http://www.w3.org/ns/r2rml#datatype>
                               xsd:string ;
                       <http://www.w3.org/ns/r2rml#termType>
@@ -169,26 +270,7 @@
                     ] ;
             <http://www.w3.org/ns/r2rml#predicateMap>
                     [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:email ]
-          ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#sqlQuery>
-                    "SELECT * FROM \"lenses\".\"AdventureWorks2019\".\"HumanResources\".\"Employee\" WHERE \"Gender\" = 'F'" ] ;
-  <http://www.w3.org/ns/r2rml#predicateObjectMap>
-          [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:Female ] ;
-            <http://www.w3.org/ns/r2rml#predicateMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:gender ]
+                              schema:givenName ]
           ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#template>
@@ -200,12 +282,12 @@
 
 [ <http://www.w3.org/ns/r2rml#logicalTable>
           [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Address\"" ] ;
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"CountryRegion\"" ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#class>
-                    schema:PostalAddress ;
+                    schema:Country ;
             <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/address/{\"AddressID\"}" ;
+                    "http://advworks.example.org/data/countryRegion/{\"CountryRegionCode\"}" ;
             <http://www.w3.org/ns/r2rml#termType>
                     <http://www.w3.org/ns/r2rml#IRI>
           ]
@@ -213,23 +295,21 @@
 
 [ <http://www.w3.org/ns/r2rml#logicalTable>
           [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Address\"" ] ;
+                    "\"lenses\".\"AddressStateProvince_join\"" ] ;
   <http://www.w3.org/ns/r2rml#predicateObjectMap>
           [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#column>
-                              "\"City\"" ;
-                      <http://www.w3.org/ns/r2rml#datatype>
-                              xsd:string ;
+                    [ <http://www.w3.org/ns/r2rml#template>
+                              "http://advworks.example.org/data/countryRegion/{\"p_CountryRegionCode\"}" ;
                       <http://www.w3.org/ns/r2rml#termType>
-                              <http://www.w3.org/ns/r2rml#Literal>
+                              <http://www.w3.org/ns/r2rml#IRI>
                     ] ;
             <http://www.w3.org/ns/r2rml#predicateMap>
                     [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:addressLocality ]
+                              schema:addressCountry ]
           ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/address/{\"AddressID\"}" ;
+                    "http://advworks.example.org/data/address/{\"a_AddressID\"}" ;
             <http://www.w3.org/ns/r2rml#termType>
                     <http://www.w3.org/ns/r2rml#IRI>
           ]
@@ -261,6 +341,65 @@
 
 [ <http://www.w3.org/ns/r2rml#logicalTable>
           [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"CountryRegion\"" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#column>
+                              "\"Name\"" ;
+                      <http://www.w3.org/ns/r2rml#language>
+                              "en" ;
+                      <http://www.w3.org/ns/r2rml#termType>
+                              <http://www.w3.org/ns/r2rml#Literal>
+                    ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:name ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/countryRegion/{\"CountryRegionCode\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Address\"" ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#class>
+                    schema:PostalAddress ;
+            <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/address/{\"AddressID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
+                    "\"lenses\".\"HomeAddress\"" ] ;
+  <http://www.w3.org/ns/r2rml#predicateObjectMap>
+          [ <http://www.w3.org/ns/r2rml#objectMap>
+                    [ <http://www.w3.org/ns/r2rml#template>
+                              "http://advworks.example.org/data/address/{\"AddressID\"}" ;
+                      <http://www.w3.org/ns/r2rml#termType>
+                              <http://www.w3.org/ns/r2rml#IRI>
+                    ] ;
+            <http://www.w3.org/ns/r2rml#predicateMap>
+                    [ <http://www.w3.org/ns/r2rml#constant>
+                              schema:address ]
+          ] ;
+  <http://www.w3.org/ns/r2rml#subjectMap>
+          [ <http://www.w3.org/ns/r2rml#template>
+                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
+            <http://www.w3.org/ns/r2rml#termType>
+                    <http://www.w3.org/ns/r2rml#IRI>
+          ]
+] .
+
+[ <http://www.w3.org/ns/r2rml#logicalTable>
+          [ <http://www.w3.org/ns/r2rml#tableName>
                     "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
   <http://www.w3.org/ns/r2rml#predicateObjectMap>
           [ <http://www.w3.org/ns/r2rml#objectMap>
@@ -274,110 +413,6 @@
             <http://www.w3.org/ns/r2rml#predicateMap>
                     [ <http://www.w3.org/ns/r2rml#constant>
                               schema:familyName ]
-          ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AddressStateProvince_join\"" ] ;
-  <http://www.w3.org/ns/r2rml#predicateObjectMap>
-          [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#column>
-                              "\"p_CountryRegionCode\"" ;
-                      <http://www.w3.org/ns/r2rml#datatype>
-                              xsd:string ;
-                      <http://www.w3.org/ns/r2rml#termType>
-                              <http://www.w3.org/ns/r2rml#Literal>
-                    ] ;
-            <http://www.w3.org/ns/r2rml#predicateMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:addressCountry ]
-          ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/address/{\"a_AddressID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#sqlQuery>
-                    "SELECT * FROM \"lenses\".\"AdventureWorks2019\".\"HumanResources\".\"Employee\" WHERE \"Gender\" = 'M'" ] ;
-  <http://www.w3.org/ns/r2rml#predicateObjectMap>
-          [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:Male ] ;
-            <http://www.w3.org/ns/r2rml#predicateMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:gender ]
-          ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#class>
-                    schema:Person ;
-            <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
-  <http://www.w3.org/ns/r2rml#predicateObjectMap>
-          [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#column>
-                              "\"Suffix\"" ;
-                      <http://www.w3.org/ns/r2rml#datatype>
-                              xsd:string ;
-                      <http://www.w3.org/ns/r2rml#termType>
-                              <http://www.w3.org/ns/r2rml#Literal>
-                    ] ;
-            <http://www.w3.org/ns/r2rml#predicateMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:honorificSuffix ]
-          ] ;
-  <http://www.w3.org/ns/r2rml#subjectMap>
-          [ <http://www.w3.org/ns/r2rml#template>
-                    "http://advworks.example.org/data/businessEntity/{\"BusinessEntityID\"}" ;
-            <http://www.w3.org/ns/r2rml#termType>
-                    <http://www.w3.org/ns/r2rml#IRI>
-          ]
-] .
-
-[ <http://www.w3.org/ns/r2rml#logicalTable>
-          [ <http://www.w3.org/ns/r2rml#tableName>
-                    "\"lenses\".\"AdventureWorks2019\".\"Person\".\"Person\"" ] ;
-  <http://www.w3.org/ns/r2rml#predicateObjectMap>
-          [ <http://www.w3.org/ns/r2rml#objectMap>
-                    [ <http://www.w3.org/ns/r2rml#column>
-                              "\"Title\"" ;
-                      <http://www.w3.org/ns/r2rml#datatype>
-                              xsd:string ;
-                      <http://www.w3.org/ns/r2rml#termType>
-                              <http://www.w3.org/ns/r2rml#Literal>
-                    ] ;
-            <http://www.w3.org/ns/r2rml#predicateMap>
-                    [ <http://www.w3.org/ns/r2rml#constant>
-                              schema:honorificPrefix ]
           ] ;
   <http://www.w3.org/ns/r2rml#subjectMap>
           [ <http://www.w3.org/ns/r2rml#template>
