@@ -53,8 +53,215 @@
 		]
 	},
 	"mapping": {
-		"entries": [],
-		"templates": [],
+		"entries": [
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "f279baee-530b-4483-a362-a7b02d945748",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Person"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "97d5f3d6-cff1-4bf8-af81-dd797df4c888",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:givenName"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"FirstName\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "82082fee-573d-4c4e-b783-b2d8ff0bf810",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:familyName"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"LastName\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "01ad92e4-8ff5-449c-b6e5-232b42c15de2",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:additionalName"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"MiddleName\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "e2a1493f-1b05-40d3-8818-833b087338f7",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:honorificPrefix"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Title\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "eaa13369-6988-414e-9149-f321a28767be",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:person/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"BusinessEntityID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:honorificSuffix"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Suffix\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				}
+			}
+		],
+		"templates": [
+			{
+				"template": "data:person/{BusinessEntityID}",
+				"termType": "iri",
+				"bindings": {
+					"BusinessEntityID": ""
+				}
+			}
+		],
 		"graphs": []
 	},
 	"dataModel": {
