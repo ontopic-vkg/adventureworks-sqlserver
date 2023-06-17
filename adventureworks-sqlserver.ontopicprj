@@ -942,6 +942,138 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SalesPerson\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesPerson\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SalesPerson\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SalesOrderHeaderSalesReason\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeaderSalesReason\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SalesOrderHeaderSalesReason\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SalesReason\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesReason\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SalesReason\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SalesOrderDetail\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SalesOrderDetail\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -2880,6 +3012,278 @@
 						"\"SpecialOfferProduct\""
 					]
 				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "8897759a-e931-4c59-8d77-5f7fad7528a3",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderHeader/{SalesOrderID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:Order"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeader\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "9b6a94ff-a28b-46e5-af1d-8051dc9a2d04",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderHeader/{SalesOrderID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:orderDate"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"OrderDate\"",
+					"datatype": "xsd:dateTime"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeader\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "59ff934e-4348-4e53-8d2b-82dd1b5fd724",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderHeader/{SalesOrderID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:customer"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:customer/{CustomerID}",
+					"bindings": {
+						"CustomerID": "\"CustomerID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeader\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "3a7cc3e8-a955-4af5-9533-470deff156b8",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderHeader/{SalesOrderID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:broker"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:businessEntity/{BusinessEntityID}",
+					"bindings": {
+						"BusinessEntityID": "\"SalesPersonID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeader\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "10980201-ac8a-466d-a908-9e39f3ab1b9e",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\"",
+						"SalesOrderDetailID": "\"SalesOrderDetailID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:OrderItem"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "c32f41f5-3a8b-45d7-8e5a-a24423f47a18",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\"",
+						"SalesOrderDetailID": "\"SalesOrderDetailID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:orderQuantity"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"OrderQty\"",
+					"datatype": "xsd:integer"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "7425251d-6abd-4c47-84be-bd05ff39ffde",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\"",
+						"SalesOrderDetailID": "\"SalesOrderDetailID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:orderedItem"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "9dc5caed-17b3-475d-bbdf-e41e109badda",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderHeader/{SalesOrderID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:orderedItem"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\"",
+						"SalesOrderDetailID": "\"SalesOrderDetailID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -2974,6 +3378,28 @@
 				"termType": "iri",
 				"bindings": {
 					"SpecialOfferID": ""
+				}
+			},
+			{
+				"template": "data:salesOrderHeader/{SalesOrderID}",
+				"termType": "iri",
+				"bindings": {
+					"SalesOrderID": ""
+				}
+			},
+			{
+				"template": "data:customer/{CustomerID}",
+				"termType": "iri",
+				"bindings": {
+					"CustomerID": ""
+				}
+			},
+			{
+				"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+				"termType": "iri",
+				"bindings": {
+					"SalesOrderID": "",
+					"SalesOrderDetailID": ""
 				}
 			}
 		],
