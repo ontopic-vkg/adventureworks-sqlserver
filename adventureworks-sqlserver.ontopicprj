@@ -876,6 +876,72 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SpecialOfferProduct\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOfferProduct\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SpecialOfferProduct\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SalesOrderHeader\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeader\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SalesOrderHeader\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -2740,6 +2806,78 @@
 						"\"AdventureWorks2019\"",
 						"\"Sales\"",
 						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "1ebc9782-0e5e-42bc-b93b-4d7e3614dee2",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:offers"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOfferProduct\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "cbabd5f9-6d0a-46cc-89f3-c8bbbf39d430",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:itemOffered"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOfferProduct\""
 					]
 				}
 			}
