@@ -810,6 +810,72 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"Customer\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"Customer\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"Customer\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"SpecialOffer\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SpecialOffer\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -2412,6 +2478,270 @@
 						"\"ProductReview\""
 					]
 				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "8a3d5eaf-fa7b-4fdf-9096-fef1670250c8",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:OfferForPurchase"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "e8d36760-00cf-4eee-98b8-5a46b419658a",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:validFrom"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"StartDate\"",
+					"datatype": "xsd:dateTime",
+					"language": null
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "b83f737b-8166-4df4-b2a7-cc9e1611a3e9",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:validThrough"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"EndDate\"",
+					"datatype": "xsd:dateTime",
+					"language": null
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "f938049a-15bf-41f2-a3ad-695d04512c4f",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:description"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Description\"",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "54349218-b96e-4593-a029-891598c6d66d",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:specialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:eligibleQuantity"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:eligibleQuantitySpecialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "7a0e3ac4-9583-4b99-9076-b8820bb60e8f",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:eligibleQuantitySpecialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:QuantitativeValue"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "bae0b2f8-a94c-4155-aa8d-87c2c48e410d",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:eligibleQuantitySpecialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:minValue"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"MinQty\"",
+					"datatype": "xsd:integer"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "3912f4f7-5cf9-4062-bb8b-c480b59ad0c0",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:eligibleQuantitySpecialOffer/{SpecialOfferID}",
+					"bindings": {
+						"SpecialOfferID": "\"SpecialOfferID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:maxValue"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"MaxQty\"",
+					"datatype": "xsd:integer"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SpecialOffer\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -2492,6 +2822,20 @@
 				"termType": "iri",
 				"bindings": {
 					"ProductReviewID": ""
+				}
+			},
+			{
+				"template": "data:specialOffer/{SpecialOfferID}",
+				"termType": "iri",
+				"bindings": {
+					"SpecialOfferID": ""
+				}
+			},
+			{
+				"template": "data:eligibleQuantitySpecialOffer/{SpecialOfferID}",
+				"termType": "iri",
+				"bindings": {
+					"SpecialOfferID": ""
 				}
 			}
 		],
