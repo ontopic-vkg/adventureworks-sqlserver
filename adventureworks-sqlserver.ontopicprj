@@ -609,9 +609,30 @@
 					"added": []
 				},
 				"foreignKeys": {
-					"added": []
+					"added": [
+						{
+							"name": "c691c722-0a0b-4fae-9346-f77402e81bfc",
+							"from": [
+								"\"ProductSubcategoryID\""
+							],
+							"to": {
+								"columns": [
+									"\"ProductSubcategoryID\""
+								],
+								"relation": [
+									"\"lenses\"",
+									"\"AdventureWorks2019\"",
+									"\"Production\"",
+									"\"ProductSubcategory\""
+								]
+							}
+						}
+					]
 				},
-				"type": "OntopicBasicLens"
+				"type": "OntopicBasicLens",
+				"nonNullConstraints": {
+					"added": []
+				}
 			},
 			{
 				"name": [
@@ -632,11 +653,32 @@
 					"\"ProductCategory\""
 				],
 				"columns": {
-					"added": [],
-					"hidden": []
+					"added": [
+						{
+							"name": "\"ProductCategoryID\"",
+							"inputColumn": "\"ProductCategoryID\"",
+							"transformations": [
+								{
+									"expression": "CAST(\"ProductCategoryID\" AS INT)",
+									"type": "SQLExpression"
+								}
+							]
+						}
+					],
+					"hidden": [
+						"\"ProductCategoryID\""
+					]
 				},
 				"uniqueConstraints": {
-					"added": []
+					"added": [
+						{
+							"name": "2b4aa252-16c2-4e6d-bcd5-92cd90b97291",
+							"determinants": [
+								"\"ProductCategoryID\""
+							],
+							"isPrimaryKey": false
+						}
+					]
 				},
 				"otherFunctionalDependencies": {
 					"added": []
@@ -644,7 +686,10 @@
 				"foreignKeys": {
 					"added": []
 				},
-				"type": "OntopicBasicLens"
+				"type": "OntopicBasicLens",
+				"nonNullConstraints": {
+					"added": []
+				}
 			},
 			{
 				"name": [
@@ -731,19 +776,61 @@
 					"\"ProductSubcategory\""
 				],
 				"columns": {
-					"added": [],
-					"hidden": []
+					"added": [
+						{
+							"name": "\"ProductSubcategoryID\"",
+							"inputColumn": "\"ProductSubcategoryID\"",
+							"transformations": [
+								{
+									"expression": "CAST(\"ProductSubcategoryID\" AS INT)",
+									"type": "SQLExpression"
+								}
+							]
+						}
+					],
+					"hidden": [
+						"\"ProductSubcategoryID\""
+					]
 				},
 				"uniqueConstraints": {
-					"added": []
+					"added": [
+						{
+							"name": "52c49d25-7a48-4a45-b153-0fa73f418dd7",
+							"determinants": [
+								"\"ProductSubcategoryID\""
+							],
+							"isPrimaryKey": false
+						}
+					]
 				},
 				"otherFunctionalDependencies": {
 					"added": []
 				},
 				"foreignKeys": {
-					"added": []
+					"added": [
+						{
+							"name": "44fe457b-0076-456e-bf26-aed81d2bb9f8",
+							"from": [
+								"\"ProductCategoryID\""
+							],
+							"to": {
+								"columns": [
+									"\"ProductCategoryID\""
+								],
+								"relation": [
+									"\"lenses\"",
+									"\"AdventureWorks2019\"",
+									"\"Production\"",
+									"\"ProductCategory\""
+								]
+							}
+						}
+					]
 				},
-				"type": "OntopicBasicLens"
+				"type": "OntopicBasicLens",
+				"nonNullConstraints": {
+					"added": []
+				}
 			},
 			{
 				"name": [
@@ -1059,6 +1146,38 @@
 				"baseRelation": [
 					"\"Sales\"",
 					"\"SalesOrderDetail\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"Person\"",
+					"\"Person\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Person\"",
+						"\"Person\""
+					]
+				],
+				"baseRelation": [
+					"\"Person\"",
+					"\"Person\""
 				],
 				"columns": {
 					"added": [],
