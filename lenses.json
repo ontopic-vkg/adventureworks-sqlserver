@@ -237,8 +237,15 @@
 			],
 			"filterExpression": null,
 			"columns": {
-				"added": [],
-				"hidden": []
+				"added": [
+					{
+						"name": "\"Name\"",
+						"expression": "LOWER(\"Name\")"
+					}
+				],
+				"hidden": [
+					"\"Name\""
+				]
 			},
 			"uniqueConstraints": {
 				"added": []
@@ -249,7 +256,9 @@
 			"foreignKeys": {
 				"added": []
 			},
-			"nonNullConstraints": null,
+			"nonNullConstraints": {
+				"added": []
+			},
 			"type": "BasicViewDefinition"
 		},
 		{
@@ -585,7 +594,7 @@
 				"added": [
 					{
 						"name": "\"ProductCategoryID\"",
-						"expression": "CAST(\"ProductCategoryID\" AS INT)"
+						"expression": "\"ProductCategoryID\""
 					}
 				],
 				"hidden": [
@@ -707,7 +716,7 @@
 				"added": [
 					{
 						"name": "\"ProductSubcategoryID\"",
-						"expression": "CAST(\"ProductSubcategoryID\" AS INT)"
+						"expression": "\"ProductSubcategoryID\""
 					}
 				],
 				"hidden": [
@@ -1120,6 +1129,76 @@
 			"baseRelation": [
 				"\"Person\"",
 				"\"Person\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Sales\"",
+				"\"vSalesPerson\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"vSalesPerson\""
+				]
+			],
+			"baseRelation": [
+				"\"Sales\"",
+				"\"vSalesPerson\""
+			],
+			"filterExpression": null,
+			"columns": {
+				"added": [],
+				"hidden": []
+			},
+			"uniqueConstraints": {
+				"added": []
+			},
+			"otherFunctionalDependencies": {
+				"added": []
+			},
+			"foreignKeys": {
+				"added": []
+			},
+			"nonNullConstraints": null,
+			"type": "BasicViewDefinition"
+		},
+		{
+			"name": [
+				"\"lenses\"",
+				"\"AdventureWorks2019\"",
+				"\"Sales\"",
+				"\"CurrencyRate\""
+			],
+			"otherNames": [
+				[
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"CurrencyRate\""
+				]
+			],
+			"baseRelation": [
+				"\"Sales\"",
+				"\"CurrencyRate\""
 			],
 			"filterExpression": null,
 			"columns": {

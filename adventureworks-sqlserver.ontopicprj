@@ -293,8 +293,25 @@
 					"\"StateProvince\""
 				],
 				"columns": {
-					"added": [],
-					"hidden": []
+					"added": [
+						{
+							"name": "\"Name\"",
+							"inputColumn": "\"Name\"",
+							"transformations": [
+								{
+									"arguments": [
+										{
+											"type": "InputArgument"
+										}
+									],
+									"type": "Lowercase"
+								}
+							]
+						}
+					],
+					"hidden": [
+						"\"Name\""
+					]
 				},
 				"uniqueConstraints": {
 					"added": []
@@ -305,7 +322,10 @@
 				"foreignKeys": {
 					"added": []
 				},
-				"type": "OntopicBasicLens"
+				"type": "OntopicBasicLens",
+				"nonNullConstraints": {
+					"added": []
+				}
 			},
 			{
 				"name": [
@@ -657,12 +677,7 @@
 						{
 							"name": "\"ProductCategoryID\"",
 							"inputColumn": "\"ProductCategoryID\"",
-							"transformations": [
-								{
-									"expression": "CAST(\"ProductCategoryID\" AS INT)",
-									"type": "SQLExpression"
-								}
-							]
+							"transformations": []
 						}
 					],
 					"hidden": [
@@ -780,12 +795,7 @@
 						{
 							"name": "\"ProductSubcategoryID\"",
 							"inputColumn": "\"ProductSubcategoryID\"",
-							"transformations": [
-								{
-									"expression": "CAST(\"ProductSubcategoryID\" AS INT)",
-									"type": "SQLExpression"
-								}
-							]
+							"transformations": []
 						}
 					],
 					"hidden": [
@@ -1193,39 +1203,77 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"vSalesPerson\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"vSalesPerson\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"vSalesPerson\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Sales\"",
+					"\"CurrencyRate\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"CurrencyRate\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"CurrencyRate\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
 	"mapping": {
 		"entries": [
-			{
-				"isIncludedInDefaultGraph": true,
-				"type": "ClassEntry",
-				"id": "f279baee-530b-4483-a362-a7b02d945748",
-				"subject": {
-					"termType": "iri",
-					"type": "IriOrBNodeTemplate",
-					"template": "data:businessEntity/{BusinessEntityID}",
-					"bindings": {
-						"BusinessEntityID": "\"BusinessEntityID\""
-					}
-				},
-				"class": {
-					"termType": "iri",
-					"type": "IriOrBNodeConstant",
-					"value": "schema:Person"
-				},
-				"graphs": [],
-				"source": {
-					"type": "RelationSource",
-					"relationName": [
-						"\"lenses\"",
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"Person\""
-					]
-				}
-			},
 			{
 				"type": "PredicateObjectEntry",
 				"id": "97d5f3d6-cff1-4bf8-af81-dd797df4c888",
