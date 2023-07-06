@@ -1269,6 +1269,38 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"Sales\"",
+					"\"SalesOrderHeaderSalesReason\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderHeaderSalesReason\""
+					]
+				],
+				"baseRelation": [
+					"\"Sales\"",
+					"\"SalesOrderHeaderSalesReason\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -3524,6 +3556,203 @@
 						"\"SalesOrderDetail\""
 					]
 				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "bbb6fad7-6b11-4feb-886e-5b533999d216",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:product/{ProductID}",
+					"bindings": {
+						"ProductID": "\"ProductID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:category"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:productSubcategory/{ProductSubcategoryID}",
+					"bindings": {
+						"ProductSubcategoryID": "\"ProductSubcategoryID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"Product\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "f9ee512d-e281-42bd-a3b3-1558ea349eba",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesReason/{SalesReasonID}",
+					"bindings": {
+						"SalesReasonID": "\"SalesReasonID\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "voc:SalesReasonCategory"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesReason\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "b9b5f25c-b67e-411c-bc25-a9507039d852",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesReason/{SalesReasonID}",
+					"bindings": {
+						"SalesReasonID": "\"SalesReasonID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:name"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"Name\"",
+					"language": "en"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesReason\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "7756f9a0-f338-4b93-b604-01a26c6e5fe7",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesReason/{SalesReasonID}",
+					"bindings": {
+						"SalesReasonID": "\"SalesReasonID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "skos:broader"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesReasonCategory/{ReasonType}",
+					"bindings": {
+						"ReasonType": "\"ReasonType\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesReason\""
+					]
+				}
+			},
+			{
+				"isIncludedInDefaultGraph": true,
+				"type": "ClassEntry",
+				"id": "2aeae998-fc82-472f-9c75-7ee3491bad3c",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesReasonCategory/{ReasonType}",
+					"bindings": {
+						"ReasonType": "\"ReasonType\""
+					}
+				},
+				"class": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "voc:SalesReasonCategory"
+				},
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesReason\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "2806a064-472b-4024-ac59-65fd51403da3",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderHeader/{SalesOrderID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "voc:reason"
+				},
+				"object": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesReason/{SalesReasonID}",
+					"bindings": {
+						"SalesReasonID": "\"SalesReasonID\""
+					}
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"Sales\"",
+						"\"SalesOrderHeaderSalesReason\""
+					]
+				}
 			}
 		],
 		"templates": [
@@ -3640,6 +3869,20 @@
 				"bindings": {
 					"SalesOrderID": "",
 					"SalesOrderDetailID": ""
+				}
+			},
+			{
+				"template": "data:salesReason/{SalesReasonID}",
+				"termType": "iri",
+				"bindings": {
+					"SalesReasonID": ""
+				}
+			},
+			{
+				"template": "data:salesReasonCategory/{ReasonType}",
+				"termType": "iri",
+				"bindings": {
+					"ReasonType": ""
 				}
 			}
 		],
@@ -18062,6 +18305,14 @@
 					}
 				],
 				"subClassOf": [],
+				"descriptions": []
+			},
+			{
+				"id": "voc:SalesReasonCategory",
+				"subClassOf": [
+					"skos:Concept"
+				],
+				"labels": [],
 				"descriptions": []
 			}
 		],
@@ -42450,6 +42701,15 @@
 				],
 				"inverses": [],
 				"subPropertyOf": []
+			},
+			{
+				"id": "voc:reason",
+				"type": "ObjectProperty",
+				"subPropertyOf": [],
+				"range": [],
+				"domain": [],
+				"descriptions": [],
+				"labels": []
 			}
 		]
 	},

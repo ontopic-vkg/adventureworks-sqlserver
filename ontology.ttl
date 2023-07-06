@@ -1109,6 +1109,10 @@ schema:CreateAction  rdf:type  rdfs:Class ;
         rdfs:label       "CreateAction" ;
         rdfs:subClassOf  schema:Action .
 
+voc:SalesReasonCategory
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  skos:Concept .
+
 schema:greater  rdf:type  rdf:Property ;
         rdfs:comment  "This ordering relation for qualitative values indicates that the subject is greater than the object." ;
         rdfs:label    "greater" .
@@ -5101,6 +5105,8 @@ schema:AccountingService
         rdfs:comment     "Accountancy business.\\n\\nAs a [[LocalBusiness]] it can be described as a [[provider]] of one or more [[Service]]\\(s).\n      " ;
         rdfs:label       "AccountingService" ;
         rdfs:subClassOf  schema:FinancialService .
+
+voc:reason  rdf:type  owl:ObjectProperty .
 
 schema:serviceOperator
         rdf:type      rdf:Property ;
