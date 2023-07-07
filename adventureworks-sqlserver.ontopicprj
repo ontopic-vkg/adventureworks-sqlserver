@@ -147,39 +147,6 @@
 					"\"lenses\"",
 					"\"AdventureWorks2019\"",
 					"\"Person\"",
-					"\"AddressType\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"AddressType\""
-					]
-				],
-				"baseRelation": [
-					"\"Person\"",
-					"\"AddressType\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Person\"",
 					"\"PersonPhone\""
 				],
 				"otherNames": [
@@ -192,39 +159,6 @@
 				"baseRelation": [
 					"\"Person\"",
 					"\"PersonPhone\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Person\"",
-					"\"BusinessEntityAddress\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"BusinessEntityAddress\""
-					]
-				],
-				"baseRelation": [
-					"\"Person\"",
-					"\"BusinessEntityAddress\""
 				],
 				"columns": {
 					"added": [],
@@ -273,59 +207,6 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Person\"",
-					"\"StateProvince\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"StateProvince\""
-					]
-				],
-				"baseRelation": [
-					"\"Person\"",
-					"\"StateProvince\""
-				],
-				"columns": {
-					"added": [
-						{
-							"name": "\"Name\"",
-							"inputColumn": "\"Name\"",
-							"transformations": [
-								{
-									"arguments": [
-										{
-											"type": "InputArgument"
-										}
-									],
-									"type": "Lowercase"
-								}
-							]
-						}
-					],
-					"hidden": [
-						"\"Name\""
-					]
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens",
-				"nonNullConstraints": {
-					"added": []
-				}
 			},
 			{
 				"name": [
@@ -711,39 +592,6 @@
 					"\"lenses\"",
 					"\"AdventureWorks2019\"",
 					"\"Production\"",
-					"\"ProductDescription\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Production\"",
-						"\"ProductDescription\""
-					]
-				],
-				"baseRelation": [
-					"\"Production\"",
-					"\"ProductDescription\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Production\"",
 					"\"ProductModel\""
 				],
 				"otherNames": [
@@ -847,39 +695,6 @@
 					"\"lenses\"",
 					"\"AdventureWorks2019\"",
 					"\"Production\"",
-					"\"ProductInventory\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Production\"",
-						"\"ProductInventory\""
-					]
-				],
-				"baseRelation": [
-					"\"Production\"",
-					"\"ProductInventory\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Production\"",
 					"\"ProductReview\""
 				],
 				"otherNames": [
@@ -892,39 +707,6 @@
 				"baseRelation": [
 					"\"Production\"",
 					"\"ProductReview\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Sales\"",
-					"\"Customer\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Sales\"",
-						"\"Customer\""
-					]
-				],
-				"baseRelation": [
-					"\"Sales\"",
-					"\"Customer\""
 				],
 				"columns": {
 					"added": [],
@@ -1045,72 +827,6 @@
 					"\"lenses\"",
 					"\"AdventureWorks2019\"",
 					"\"Sales\"",
-					"\"SalesPerson\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Sales\"",
-						"\"SalesPerson\""
-					]
-				],
-				"baseRelation": [
-					"\"Sales\"",
-					"\"SalesPerson\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Sales\"",
-					"\"SalesOrderHeaderSalesReason\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Sales\"",
-						"\"SalesOrderHeaderSalesReason\""
-					]
-				],
-				"baseRelation": [
-					"\"Sales\"",
-					"\"SalesOrderHeaderSalesReason\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Sales\"",
 					"\"SalesReason\""
 				],
 				"otherNames": [
@@ -1175,104 +891,6 @@
 			{
 				"name": [
 					"\"lenses\"",
-					"\"Person\"",
-					"\"Person\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Person\"",
-						"\"Person\""
-					]
-				],
-				"baseRelation": [
-					"\"Person\"",
-					"\"Person\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Sales\"",
-					"\"vSalesPerson\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Sales\"",
-						"\"vSalesPerson\""
-					]
-				],
-				"baseRelation": [
-					"\"Sales\"",
-					"\"vSalesPerson\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Sales\"",
-					"\"CurrencyRate\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Sales\"",
-						"\"CurrencyRate\""
-					]
-				],
-				"baseRelation": [
-					"\"Sales\"",
-					"\"CurrencyRate\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
 					"\"Sales\"",
 					"\"SalesOrderHeaderSalesReason\""
 				],
@@ -1286,71 +904,6 @@
 				"baseRelation": [
 					"\"Sales\"",
 					"\"SalesOrderHeaderSalesReason\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Purchasing\"",
-					"\"PurchaseOrderHeader\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Purchasing\"",
-						"\"PurchaseOrderHeader\""
-					]
-				],
-				"baseRelation": [
-					"\"Purchasing\"",
-					"\"PurchaseOrderHeader\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"Sales\"",
-					"\"CurrencyRate\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Sales\"",
-						"\"CurrencyRate\""
-					]
-				],
-				"baseRelation": [
-					"\"Sales\"",
-					"\"CurrencyRate\""
 				],
 				"columns": {
 					"added": [],
