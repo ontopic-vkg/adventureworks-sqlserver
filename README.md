@@ -4,6 +4,16 @@ AdventureWorks is a famous [sample database published by Microsoft](https://lear
 This project maps its 2019 OLTP edition installed on SQL Server 15.00.4236.
 
 
+## What has been mapped
+
+ - Persons
+ - Products
+ - Offers
+ - Orders
+ - Reviews
+
+ It uses the schema.org vocabulary as much as possible. What has been added are categories for products and sales reasons, which can be considered as internal data and are outside the scope of schema.org.
+
 
 ## Using it with Ontopic Studio
 
@@ -48,5 +58,15 @@ ORDER BY ?year DESC(?totalSales)
 1. Edit the file `adventure.properties` to insert the credentials and the JDBC URL for connecting to the database. Tip: you can see the URL in Ontopic Studio.
 2. Start the docker-compose script: `docker-compose up -d`
 3. Open http://localhost:8080 and run your SPARQL queries
+
+
+## Materialize the Knowledge Graph
+
+1. Edit the file `adventure.properties` to insert the credentials and the JDBC URL for connecting to the database.
+2. Make sure every user can write in the directory `output`. On Unix: `chmod 777 output`
+3. Run the docker-compose script for materialization: `docker-compose -f docker-compose-materialization.yml up`
+4. Wait for the command to finish. You should find the file `kg.nt` in the `output` directory.
+
+We commented out the ontology parameter to avoid materializing the saturated graph (i.e. the graph obtained after reasoning). Remove the comment if you want to obtain the saturated graph.
 
 
