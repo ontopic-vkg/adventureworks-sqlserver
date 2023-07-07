@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  ontop:
+    image: ontop/ontop:5.1.0-SNAPSHOT
+    environment:
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/ontology.ttl
+      ONTOP_MAPPING_FILE: /opt/ontop/input/mapping.ttl
+      ONTOP_LENSES_FILE: /opt/ontop/input/lenses.json
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/adventure.properties
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+    volumes:
+      - .:/opt/ontop/input
+      - ./jdbc:/opt/ontop/jdbc
+    ports:
+      - "8080:8080"
