@@ -919,39 +919,6 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
-			},
-			{
-				"name": [
-					"\"lenses\"",
-					"\"AdventureWorks2019\"",
-					"\"Production\"",
-					"\"ProductListPriceHistory\""
-				],
-				"otherNames": [
-					[
-						"\"AdventureWorks2019\"",
-						"\"Production\"",
-						"\"ProductListPriceHistory\""
-					]
-				],
-				"baseRelation": [
-					"\"Production\"",
-					"\"ProductListPriceHistory\""
-				],
-				"columns": {
-					"added": [],
-					"hidden": []
-				},
-				"uniqueConstraints": {
-					"added": []
-				},
-				"otherFunctionalDependencies": {
-					"added": []
-				},
-				"foreignKeys": {
-					"added": []
-				},
-				"type": "OntopicBasicLens"
 			}
 		]
 	},

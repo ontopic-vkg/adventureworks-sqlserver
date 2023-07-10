@@ -857,41 +857,6 @@
 			},
 			"nonNullConstraints": null,
 			"type": "BasicViewDefinition"
-		},
-		{
-			"name": [
-				"\"lenses\"",
-				"\"AdventureWorks2019\"",
-				"\"Production\"",
-				"\"ProductListPriceHistory\""
-			],
-			"otherNames": [
-				[
-					"\"AdventureWorks2019\"",
-					"\"Production\"",
-					"\"ProductListPriceHistory\""
-				]
-			],
-			"baseRelation": [
-				"\"Production\"",
-				"\"ProductListPriceHistory\""
-			],
-			"filterExpression": null,
-			"columns": {
-				"added": [],
-				"hidden": []
-			},
-			"uniqueConstraints": {
-				"added": []
-			},
-			"otherFunctionalDependencies": {
-				"added": []
-			},
-			"foreignKeys": {
-				"added": []
-			},
-			"nonNullConstraints": null,
-			"type": "BasicViewDefinition"
 		}
 	]
 }
