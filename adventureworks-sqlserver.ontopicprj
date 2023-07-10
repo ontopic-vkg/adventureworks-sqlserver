@@ -919,6 +919,39 @@
 					"added": []
 				},
 				"type": "OntopicBasicLens"
+			},
+			{
+				"name": [
+					"\"lenses\"",
+					"\"AdventureWorks2019\"",
+					"\"Production\"",
+					"\"ProductListPriceHistory\""
+				],
+				"otherNames": [
+					[
+						"\"AdventureWorks2019\"",
+						"\"Production\"",
+						"\"ProductListPriceHistory\""
+					]
+				],
+				"baseRelation": [
+					"\"Production\"",
+					"\"ProductListPriceHistory\""
+				],
+				"columns": {
+					"added": [],
+					"hidden": []
+				},
+				"uniqueConstraints": {
+					"added": []
+				},
+				"otherFunctionalDependencies": {
+					"added": []
+				},
+				"foreignKeys": {
+					"added": []
+				},
+				"type": "OntopicBasicLens"
 			}
 		]
 	},
@@ -3565,6 +3598,76 @@
 						"\"AdventureWorks2019\"",
 						"\"Sales\"",
 						"\"SalesOrderHeader\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "6ef5a69f-7924-4b68-91de-42bbe68d42c9",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\"",
+						"SalesOrderDetailID": "\"SalesOrderDetailID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:price"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralColumn",
+					"column": "\"LineTotal\"",
+					"datatype": "xsd:decimal"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
+					]
+				}
+			},
+			{
+				"type": "PredicateObjectEntry",
+				"id": "cbc8554a-8a66-4870-a4e4-5996a6df5738",
+				"subject": {
+					"termType": "iri",
+					"type": "IriOrBNodeTemplate",
+					"template": "data:salesOrderDetail/{SalesOrderID}/{SalesOrderDetailID}",
+					"bindings": {
+						"SalesOrderID": "\"SalesOrderID\"",
+						"SalesOrderDetailID": "\"SalesOrderDetailID\""
+					}
+				},
+				"predicate": {
+					"termType": "iri",
+					"type": "IriOrBNodeConstant",
+					"value": "schema:priceCurrency"
+				},
+				"object": {
+					"termType": "literal",
+					"type": "LiteralConstant",
+					"value": "USD",
+					"datatype": "xsd:string"
+				},
+				"isIncludedInDefaultGraph": true,
+				"graphs": [],
+				"source": {
+					"type": "RelationSource",
+					"relationName": [
+						"\"lenses\"",
+						"\"AdventureWorks2019\"",
+						"\"Sales\"",
+						"\"SalesOrderDetail\""
 					]
 				}
 			}
