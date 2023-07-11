@@ -53,6 +53,24 @@ GROUP BY ?year ?firstName ?lastName
 ORDER BY ?year DESC(?totalSales)
 ```
 
+#### Sales by product and year
+
+```sparql
+PREFIX schema: <http://schema.org/>
+
+SELECT ?productNumber ?year (SUM(?price) AS ?productSales) WHERE {
+  ?order a schema:Order ;
+         schema:orderedItem ?orderItem ;
+         schema:orderDate ?date .
+  ?orderItem schema:price ?price;
+         schema:orderedItem ?product.
+  ?product schema:sku ?productNumber .
+  BIND (year(?date) AS ?year)
+}
+GROUP BY ?productNumber ?year
+ORDER BY ?year DESC(?productSales)
+```
+
 ## Deploy as a Virtual Knowledge Graph using Ontop
 
 1. Edit the file `adventure.properties` to insert the credentials and the JDBC URL for connecting to the database. Tip: you can see the URL in Ontopic Studio.
